@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Left click
+if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then 
+  /home/xiphunon/.config/i3blocks/blocks/xkblayout-state set +1
+fi
+
+# Right Click
+if [[ "${BLOCK_BUTTON}" -eq 3 ]]; then 
+  /home/xiphunon/.config/i3blocks/blocks/xkblayout-state set -1
+fi 
+
+LOCALE=$(/home/xiphunon/.config/i3blocks/blocks/xkblayout-state print "%s" | awk '{print toupper($0)}')
+
+if [[ "${LOCALE}" ]]; then
+  echo "${LOCALE}" 
+  echo "${LOCALE}"
+  echo ""
+fi
